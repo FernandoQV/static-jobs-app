@@ -22,7 +22,7 @@ import {
 } from "./styledCard";
 
 const Card = ({ job }) => {
-  const {viewDate}=useContext(JobsContext)
+  const { readFilters } = useContext(JobsContext);
   const {
     company,
     logo,
@@ -42,7 +42,8 @@ const Card = ({ job }) => {
       <ContainerInterno>
         <Logo src={logo} />
         <ContainerFlexBasic>
-          <Company>{company}</Company>{news && <NewButton>news</NewButton>} 
+          <Company>{company}</Company>
+          {news && <NewButton>news</NewButton>}
           {featured && <FeaturedButton>featured</FeaturedButton>}
         </ContainerFlexBasic>
         <Position>{position}</Position>
@@ -52,13 +53,17 @@ const Card = ({ job }) => {
           <Location>{location}</Location>
         </ContainerFlexBasic>
         <GridFooter>
-          <Role onClick={()=>viewDate(<Role/>)}>{role}</Role>
-          <Level>{level}</Level>
+          <Role onClick={() => readFilters(role)}>{role}</Role>
+          <Level onClick={() => readFilters(level)}>{level}</Level>
           {languages.map((lenguage, index) => (
-            <Lenguage key={index}>{lenguage}</Lenguage>
+            <Lenguage key={index} onClick={() => readFilters(lenguage)}>
+              {lenguage}
+            </Lenguage>
           ))}
           {tools.map((tool, index) => (
-            <Tool key={index}>{tool}</Tool>
+            <Tool key={index} onClick={() => readFilters(tool)}>
+              {tool}
+            </Tool>
           ))}
         </GridFooter>
       </ContainerInterno>

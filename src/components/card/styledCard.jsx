@@ -60,7 +60,8 @@ font-weight:700;
 border:none;
 border-radius:5px;
 padding:.5rem 1rem;
-text-align:center
+text-align:center;
+cursor: pointer;
 `;
 const Role=styled.h3`
 ${cssRoleLevelLengaugesTools};
@@ -74,4 +75,9 @@ ${cssRoleLevelLengaugesTools};
 const Tool=styled.h3`
 ${cssRoleLevelLengaugesTools};
 `;
-export {Logo,Company,NewButton,FeaturedButton,Position,PostedAt,Contract,Location,Role,Level,Lenguage,Tool}
+const Filter=styled.h3`
+${cssRoleLevelLengaugesTools};
+margin-right:1rem;
+`;
+
+export {Logo,Company,NewButton,FeaturedButton,Position,PostedAt,Contract,Location,Role,Level,Lenguage,Tool,Filter}

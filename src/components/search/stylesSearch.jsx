@@ -11,9 +11,11 @@ border-radius:8px;
 background-color:#97f3d4;
 `;
 const ContainerFilters=styled.div`
-display:grid;
+/* display:grid;
 grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
-gap:minmax(.5rem,1rem);
+gap:1rem; */
+display:flex;
+flex-wrap:wrap;
 `;
 const Close=styled.h3`
 font-size:1rem;
